@@ -1,0 +1,29 @@
+
+<h1>LISTA DE REGISTROS</h1>
+
+<div *ngFor="let item of arregloRegistros; let i = index">
+  <div>
+    <strong>Grupo:</strong> {{ item.grupo }}<br>
+    <strong>Número de Cuenta:</strong> {{ item.numCuenta }}<br>
+    <strong>Nombre:</strong> {{ item.nombre }}<br>
+    <button (click)="editarItem(i)">Editar</button>
+    <button (click)="eliminarItem(i)">Eliminar</button>
+  </div>
+</div>
+
+<!-- Formulario de Edición -->
+<div *ngIf="indiceEditando !== null">
+  <h2>Editar Registro</h2>
+  <form (submit)="guardarEdicion()">
+    <label for="editGrupo">Grupo:</label>
+    <input type="text" id="editGrupo" name="editGrupo" [(ngModel)]="registroEditando.grupo" required>
+
+    <label for="editNumCuenta">Número de Cuenta:</label>
+    <input type="text" id="editNumCuenta" name="editNumCuenta" [(ngModel)]="registroEditando.numCuenta" required>
+
+    <label for="editNombre">Nombre:</label>
+    <input type="text" id="editNombre" name="editNombre" [(ngModel)]="registroEditando.nombre" required>
+
+    <button type="submit">Guardar</button>
+  </form>
+</div>

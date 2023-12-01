@@ -1,0 +1,22 @@
+
+<H1>REGISTRO DE ALUMNOS</H1>
+
+<form>
+
+      <label for="grupo">grupo</label>
+      <input type="text" id="text" name="text" placeholder="text" [(ngModel)]="registro.grupo" />
+
+      <label for="numCuenta">num cuenta</label>
+      <input type="text" id="numCuenta" name="numCuenta"  placeholder="numCuenta"  [(ngModel)]="registro.numCuenta" />
+
+      <label for="nombre">nombre</label>
+      <input type="text" id="text" name="text"  placeholder="text"  [(ngModel)]="registro.nombre" />
+
+
+      <button type="submit"  (click)="registrar(registro)">ADD</button>
+
+
+
+  </form>
+
+
